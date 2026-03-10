@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Select Branch</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="branches-bg">
+
+<h1 class="title">Choose Your Branch</h1>
+
+<div class="branch-container">
+
+<div class="branch-card glassmorphism" onclick="goToCourses('aiml')">
+<h2>AIML</h2>
+<p>Artificial Intelligence & Machine Learning</p>
+</div>
+
+<div class="branch-card glassmorphism" onclick="goToCourses('ds')">
+<h2>Data Science</h2>
+<p>Data Analytics and Big Data</p>
+</div>
+
+<div class="branch-card glassmorphism" onclick="goToCourses('ece')">
+<h2>ECE</h2>
+<p>Electronics & Communication Engineering</p>
+</div>
+
+<div class="branch-card glassmorphism" onclick="goToCourses('cyber')">
+<h2>Cybersecurity</h2>
+<p>Network Security & Ethical Hacking</p>
+</div>
+
+<div class="branch-card glassmorphism" onclick="goToCourses('civil')">
+<h2>Civil</h2>
+<p>Structural Engineering & Construction</p>
+</div>
+
+</div>
+
+<!-- Chatbot Widget -->
+<div class="chatbot-widget">
+  <button id="chatbotToggle" class="chatbot-toggle glassmorphism">💬</button>
+  <div id="chatbotContainer" class="chatbot-container glassmorphism" style="display: none;">
+    <div class="chatbot-header">
+      <h3>Course Advisor</h3>
+      <button onclick="toggleChatbot()">✖</button>
+    </div>
+    <div id="chatbotMessages" class="chatbot-messages">
+      <div class="bot-message">Hello! Tell me about your skills or interests, and I'll suggest a course!</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatbotInput" placeholder="e.g. Python, data, AI..." onkeypress="handleChatbotKeyPress(event)">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

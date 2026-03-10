@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CourseHub Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar glassmorphism">
+
+<h2>CourseHub</h2>
+
+<ul>
+<li onclick="window.location.href='dashboard.html'">🏠 Dashboard</li>
+<li onclick="window.location.href='dashboard.html'">📚 My Courses</li>
+<li onclick="window.location.href='resources.html'">📖 Resources</li>
+<li onclick="window.location.href='dashboard.html'">⬇ Downloads</li>
+<hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+<li onclick="window.location.href='branches.html'">🔙 All Courses</li>
+<li onclick="window.location.href='../index.html'">🌐 Home Page</li>
+</ul>
+
+</div>
+
+
+<!-- Main Content -->
+
+<div class="main">
+
+<div class="welcome-card glassmorphism">
+<h1 id="welcomeText">Course Materials</h1>
+</div>
+
+<div id="resources" class="resource-container"></div>
+
+</div>
+
+
+<script>
+
+const resourcesData={
+
+"Machine Learning":{
+video:"https://www.youtube.com/watch?v=GwIo3gDZCVQ",
+notes:"../assets/ml-notes.pdf",
+practice:"https://leetcode.com/problemset/"
+},
+
+"Deep Learning":{
+video:"https://www.youtube.com/watch?v=aircAruvnKk",
+notes:"../assets/dl-notes.pdf",
+practice:"https://www.kaggle.com/learn"
+},
+
+"Data Analysis":{
+video:"https://www.youtube.com/watch?v=ua-CiDNNj30",
+notes:"../assets/ds-notes.pdf",
+practice:"https://www.kaggle.com/learn"
+},
+
+"Big Data":{
+video:"https://www.youtube.com/watch?v=9s-vSeWej1U",
+notes:"../assets/bigdata-notes.pdf",
+practice:"https://www.hackerrank.com/domains/data-science"
+},
+
+"Digital Electronics":{
+video:"https://www.youtube.com/watch?v=Y1kYFgGJbSM",
+notes:"../assets/ece-notes.pdf",
+practice:"https://www.allaboutcircuits.com/"
+},
+
+"Communication Systems":{
+video:"https://www.youtube.com/watch?v=ybEVx7bYUYY&list=PLs5_Rtf2P2r5VTd_qql5OiIIsRcBxYdyk",
+notes:"../assets/comm-notes.pdf",
+practice:"https://www.electronics-tutorials.ws/"
+},
+
+"Ethical Hacking":{
+video:"https://www.youtube.com/watch?v=cKEf8H9cQGM&list=PLwO5-rumi8A4J7h4Fm92TEC00gfZUk7ls",
+notes:"../assets/eth-notes.pdf",
+practice:"https://www.w3schools.com/cybersecurity/"
+},
+
+"Network Security":{
+video:"https://www.youtube.com/watch?v=zIWGjkr0ENE",
+notes:"../assets/networksecurity-notes.pdf",
+practice:"https://www.geeksforgeeks.org/ethical-hacking/network-security-best-practices/"
+},
+
+"Structural Analysis":{
+video:"https://www.youtube.com/watch?v=Gv7t_OVxf-Q",
+notes:"../assets/structuralanalysis-notes.pdf",
+practice:"https://www.youtube.com/watch?v=nPlYcsrLFjo"
+},
+
+"Construction Management":{
+video:"https://www.youtube.com/watch?v=G1P7W119x1w&list=PLm_MSClsnwm8ZfOLmf8XJqE3rVe8BByzl",
+notes:"../assets/cm-notes.pdf",
+practice:"https://www.youtube.com/watch?v=wFGouP9ubcg"
+}
+
+
+
+}
+
+/* get stored data */
+
+let course = localStorage.getItem("course")
+let name = localStorage.getItem("studentName")
+
+if(name && course){
+document.getElementById("welcomeText").innerText =
+"Welcome " + name + "! Here are your " + course + " resources"
+}
+
+let container = document.getElementById("resources")
+
+let data = resourcesData[course]
+
+if(data){
+
+container.innerHTML = `
+
+<div class="resource-card glassmorphism">
+<h3>🎥 Lecture Videos</h3>
+<a href="${data.video}" target="_blank">Watch Video</a>
+</div>
+
+<div class="resource-card glassmorphism">
+<h3>📄 Notes</h3>
+<a href="${data.notes}" target="_blank">Download Notes</a>
+</div>
+
+<div class="resource-card glassmorphism">
+<h3>💻 Practice Problems</h3>
+<a href="${data.practice}" target="_blank">Solve Problems</a>
+</div>
+
+`
+
+}
+
+</script>
+
+</body>
+</html>

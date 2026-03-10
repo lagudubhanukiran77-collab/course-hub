@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CourseHub Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<!-- Sidebar -->
+
+<div class="sidebar glassmorphism">
+
+<h2>CourseHub</h2>
+
+<ul>
+<li onclick="showSection('dashboard')">🏠 Dashboard</li>
+<li onclick="showSection('courses')">📚 My Courses</li>
+<li onclick="showSection('resources')">📖 Resources</li>
+<li onclick="showSection('downloads')">⬇ Downloads</li>
+<hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+<li onclick="window.location.href='branches.html'">🔙 All Courses</li>
+<li onclick="window.location.href='../index.html'">🌐 Home Page</li>
+</ul>
+
+</div>
+
+
+<!-- Main content -->
+
+<div class="main">
+
+    <div class="topbar glassmorphism">
+
+<h2>Dashboard</h2>
+
+<div class="user-info">
+<span id="userName"></span>
+</div>
+
+</div>
+
+<h1 id="welcomeText">Welcome</h1>
+
+<div class="profile-card glassmorphism">
+
+<h3 id="profileName">Student</h3>
+
+<p id="profileCourse">Course: -</p>
+
+<p>Status: Active Learner</p>
+
+</div>
+
+<!-- Dashboard Stats -->
+
+<div class="stats section" id="dashboardSection">
+
+<div class="card glassmorphism">
+<h3>Enrolled Courses</h3>
+<p id="courseCount">0</p>
+</div>
+
+<div class="card glassmorphism">
+<h3>Resources</h3>
+<p>3</p>
+</div>
+
+</div>
+
+<!-- Courses Section -->
+
+<div id="courseSection" class="section">
+
+<h2>Your Courses</h2>
+
+</div>
+
+<!-- Resources Section -->
+
+<div id="resourceSection" class="section">
+
+<h2>Course Resources</h2>
+
+<div id="resources" class="resource-container"></div>
+
+</div>
+
+<!-- Downloads Section -->
+
+<div id="downloadsSection" class="section">
+
+<h2>Downloads</h2>
+
+<div id="downloads"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

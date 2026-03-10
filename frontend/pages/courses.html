@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Courses</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="courses-bg">
+
+<h1 class="title">Available Courses</h1>
+
+<div id="courses" class="course-container glassmorphism"></div>
+
+
+<!-- DESCRIPTION POPUP -->
+
+<div id="descPopup" class="popup">
+<div class="popup-content glassmorphism">
+
+<h2>Description</h2>
+<p id="descText"></p>
+
+<button onclick="closeDesc()">Close</button>
+
+</div>
+</div>
+
+
+<!-- SYLLABUS POPUP -->
+
+<div id="sylPopup" class="popup">
+<div class="popup-content glassmorphism">
+
+<h2>Syllabus</h2>
+<p id="sylText"></p>
+
+<button onclick="closeSyl()">Close</button>
+
+</div>
+</div>
+
+
+<!-- ENROLL POPUP -->
+
+<div id="enrollPopup" class="popup">
+
+<div class="popup-content glassmorphism">
+
+<h2>Enroll Course</h2>
+
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<input type="text" placeholder="Register Number">
+
+<button onclick="enroll()">Submit</button>
+
+</div>
+
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>
